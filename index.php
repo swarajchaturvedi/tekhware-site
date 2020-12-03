@@ -1,20 +1,44 @@
+<?php
+$con = mysqli_connect("localhost", "root", "", "tekhware") or die("<script>alert('connection failed')</script>");
+$wb = $ad = $iot = $logo = $other = '';
+if (isset($_POST['submitmssg'])) {
+  $name = $_POST['cname'];
+  $email = $_POST['cemail'];
+  $phn = $_POST['cPno'];
+  $subject = $_POST['csubject'];
+  $mssg = $_POST['cmessage'];
+  if (isset($_POST['wdev']))
+    $wb = $_POST['wdev'];
+  if (isset($_POST['adev']))
+    $ad = $_POST['adev'];
+  if (isset($_POST['iotdev']))
+    $iot = $_POST['iotdev'];
+  if (isset($_POST['lgdes']))
+    $logo = $_POST['lgdes'];
+  if (isset($_POST['other']))
+    $other = $_POST['other'];
+  $qrry = "INSERT INTO `contact_us` (`c_name`, `c_email`, `subjt`, `c_mssg`, `Pno.`, `web_dev`, `app_dev`, `iot_dev`, `logo_design`, `other`) VALUES ('$name', '$email','$subject', '$mssg','$phn','$wb','$ad', '$iot', '$logo','$other')";
+  mysqli_query($con, $qrry) or die("<script>alert('Failed')</script>");
+  echo "<script>alert('Submitted')</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>TekhWare</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TekhWare | Way towards Digitalization</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+  <meta content="Web Development, App Development,Iot Prototyping ,Graphic design, web support,logo,poster,banner" name="keywords">
+  <meta content="Communication is the key on which the lock of every organization turns, Our organization provides a digital support to upscale your growing business. We Develop Websites | Mobile Apps | Iot Prototypes | Graphic Design" name="description">
 
   <!-- Favicons -->
   <link href="img/logo 2.jpg" rel="icon">
   <!-- <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +64,7 @@
     <div class="container">
 
       <div class="logo float-left">
-        <a href="#intro" class="scrollto"><img src="img/(1).png" alt="" class="img-fluid"></a>
+        <a href="#intro" class="scrollto"><img src="img/(1).png" alt="" class="img-fluid "></a>
       </div>
 
       <nav class="main-nav float-right d-none d-lg-block">
@@ -405,8 +429,7 @@
                 <h4><a href="#">App 1</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="img/portfolio/rht.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"
-                    title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="img/portfolio/rht.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -420,8 +443,7 @@
                 <h4><a href="#">Web 3</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3"
-                    title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -435,8 +457,7 @@
                 <h4><a href="#">App 2</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="img/portfolio/2t.jpeg" class="link-preview" data-lightbox="portfolio" data-title="App 2"
-                    title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="img/portfolio/2t.jpeg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -450,8 +471,7 @@
                 <h4><a href="#">Card 2</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2"
-                    title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -465,8 +485,7 @@
                 <h4><a href="#">Web 2</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2"
-                    title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -480,8 +499,7 @@
                 <h4><a href="#">App 3</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3"
-                    title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -495,8 +513,7 @@
                 <h4><a href="#">Card 1</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1"
-                    title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -510,8 +527,7 @@
                 <h4><a href="#">Card 3</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3"
-                    title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -525,8 +541,7 @@
                 <h4><a href="#">Web 1</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1"
-                    title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -619,7 +634,7 @@
     <!-- <div class="container"> -->
     <!-- <div class="section-header"> -->
     <!-- <h3>Team</h3> -->
-    <!-- <!-- <p>Your dream deserves more than a place in your imagination. Our developers can build the <mark>Web and -->
+    <!--  <p>Your dream deserves more than a place in your imagination. Our developers can build the <mark>Web and -->
 
     <!-- mobile app</mark>to your -->
     <!-- requirement, in your budget and as per your timeline.</p> -->
@@ -713,8 +728,8 @@
     <!--  -->
     <!-- <div class="section-header"> -->
     <!-- <h3>Our CLients</h3> -->
-    <!-- <!-- <p>Our diverse client base across various industries have successfully leveraged our rich web expertise to -->
-    
+    <!-- <p>Our diverse client base across various industries have successfully leveraged our rich web expertise to -->
+
     <!-- launch highly -->
     <!-- scalable applications</p> -->
     <!-- </div> -->
@@ -789,55 +804,87 @@
 
           <div class="col-lg-6">
             <div class="map mb-4 mb-lg-0">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.6075777980013!2d77.5911411776944!3d27.605693436646693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736ce47bffc039%3A0xfe5fc3da92c6341!2sGLA%20University!5e0!3m2!1sen!2sin!4v1604754905886!5m2!1sen!2sin"
-                frameborder="0" style="border:0;width: 100%; height: 312px;" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.6075777980013!2d77.5911411776944!3d27.605693436646693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736ce47bffc039%3A0xfe5fc3da92c6341!2sGLA%20University!5e0!3m2!1sen!2sin!4v1604754905886!5m2!1sen!2sin" frameborder="0" style="border:0;width: 100%; height: 312px;" allowfullscreen></iframe>
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="row">
-              <!-- <div class="col-md-5 info"> -->
-              <!-- <i class="ion-ios-location-outline"></i> -->
-              <!-- <p>A</p> -->
-              <!-- </div> -->
-              <div class="col-md-4 info">
+              <div class="col-md-4  info ">
                 <i class="ion-ios-email-outline"></i>
-                <p>contacts@tekhware.com</p>
+                <p class="text-secondary">contacts@tekhware.com</p>
               </div>
-              <div class="col-md-3 info">
-              <i class="ion-ios-telephone-outline"></i>
-              <p>+91 74530 02645</p>
+              <div class="col-md-6 info">
+                <i class="ion-ios-telephone-outline"></i>
+                <pre class="text-secondary">+91 74530 02645</pre>
               </div>
             </div>
 
             <div class="form">
-              <div id="sendmessage">Your message has been sent. Thank you!</div>
-              <div id="errormessage"></div>
-              <form action="" method="post" role="form" class="contactForm">
+              <!-- <div id="sendmessage">Your message has been sent. Thank you!</div> -->
+              <!-- <div id="errormessage"></div> -->
+              <form action="" method="POST" class="">
                 <div class="form-row">
                   <div class="form-group col-lg-6">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                      data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <input type="text" name="cname" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                      data-rule="email" data-msg="Please enter a valid email" />
+                    <input type="email" class="form-control" name="cemail" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                     <div class="validation"></div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                    data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <input type="number" class="form-control" name="cPno" id="Phone" placeholder="Phone No." data-rule="minlen:4" data-msg="Please enter Phone NO." />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required"
-                    data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
-                </div>
-                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+                  <label for="#selectwrk " class="text-secondary">Related Work </label>
+                  <div class="container mb-3" name="selectwrk">
+                    <div class="form-check">
+                      <div class="col">
+                        <input class="form-check-input" type="checkbox" name="wdev" id="gridCheck" value="Y">
+                        <label class="form-check-label text-secondary" for="gridCheck">
+                          Web Development
+                        </label>
+                      </div>
+                      <div class="col">
+                        <input class="form-check-input" type="checkbox" name="adev" id="gridCheck" value="Y">
+                        <label class="form-check-label text-secondary" for="gridCheck">
+                          App Development
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-check">
+                      <div class="col">
+                        <input class="form-check-input" type="checkbox" name="iotdev" id="gridCheck" value="Y">
+                        <label class="form-check-label text-secondary" for="gridCheck">
+                          Iot Prototype & Software Devlp.
+                        </label>
+                      </div>
+                      <div class="col">
+                        <input class="form-check-input" type="checkbox" name="lgdes" id="gridCheck" value="Y">
+                        <label class="form-check-label text-secondary" for="gridCheck">
+                          Logo,Poser & Business Card Design
+                        </label>
+                      </div>
+                      <div class="col">
+                        <input class="form-check-input" type="checkbox" name="other" id="gridCheck" value="Y">
+                        <label class="form-check-label text-secondary" for="gridCheck">
+                          Other
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="csubject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control" name="cmessage" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                    <div class="validation"></div>
+                  </div>
+                  <div class="text-center"><button type="submit" name="submitmssg">Send Message</button></div>
               </form>
             </div>
           </div>
