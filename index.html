@@ -1,27 +1,27 @@
-<?php
-$con = mysqli_connect("localhost", "root", "", "tekhware") or die("<script>alert('connection failed')</script>");
-$wb = $ad = $iot = $logo = $other = '';
-if (isset($_POST['submitmssg'])) {
-  $name = $_POST['cname'];
-  $email = $_POST['cemail'];
-  $phn = $_POST['cPno'];
-  $subject = $_POST['csubject'];
-  $mssg = $_POST['cmessage'];
-  if (isset($_POST['wdev']))
-    $wb = $_POST['wdev'];
-  if (isset($_POST['adev']))
-    $ad = $_POST['adev'];
-  if (isset($_POST['iotdev']))
-    $iot = $_POST['iotdev'];
-  if (isset($_POST['lgdes']))
-    $logo = $_POST['lgdes'];
-  if (isset($_POST['other']))
-    $other = $_POST['other'];
-  $qrry = "INSERT INTO `contact_us` (`c_name`, `c_email`, `subjt`, `c_mssg`, `Pno.`, `web_dev`, `app_dev`, `iot_dev`, `logo_design`, `other`) VALUES ('$name', '$email','$subject', '$mssg','$phn','$wb','$ad', '$iot', '$logo','$other')";
-  mysqli_query($con, $qrry) or die("<script>alert('Failed')</script>");
-  echo "<script>alert('Submitted')</script>";
-}
-?>
+<!-- <?php -->
+<!-- $con = mysqli_connect("localhost", "root", "", "tekhware") or die("<script>alert('connection failed')</script>"); -->
+<!-- $wb = $ad = $iot = $logo = $other = ''; -->
+<!-- if (isset($_POST['submitmssg'])) { -->
+  <!-- $name = $_POST['cname']; -->
+  <!-- $email = $_POST['cemail']; -->
+  <!-- $phn = $_POST['cPno']; -->
+  <!-- $subject = $_POST['csubject']; -->
+  <!-- $mssg = $_POST['cmessage']; -->
+  <!-- if (isset($_POST['wdev'])) -->
+    <!-- $wb = $_POST['wdev']; -->
+  <!-- if (isset($_POST['adev'])) -->
+    <!-- $ad = $_POST['adev']; -->
+  <!-- if (isset($_POST['iotdev'])) -->
+    <!-- $iot = $_POST['iotdev']; -->
+  <!-- if (isset($_POST['lgdes'])) -->
+    <!-- $logo = $_POST['lgdes']; -->
+  <!-- if (isset($_POST['other'])) -->
+    <!-- $other = $_POST['other']; -->
+  <!-- $qrry = "INSERT INTO `contact_us` (`c_name`, `c_email`, `subjt`, `c_mssg`, `Pno.`, `web_dev`, `app_dev`, `iot_dev`, `logo_design`, `other`) VALUES ('$name', '$email','$subject', '$mssg','$phn','$wb','$ad', '$iot', '$logo','$other')"; -->
+  <!-- mysqli_query($con, $qrry) or die("<script>alert('Failed')</script>"); -->
+  <!-- echo "<script>alert('Submitted')</script>"; -->
+<!-- } -->
+<!-- ?> -->
 <!DOCTYPE html>
 <html lang="en">
 
