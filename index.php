@@ -31,7 +31,17 @@ if (isset($_POST['submitmssg'])) {
   <title>TekhWare | Way towards Digitalization</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="Web Development, App Development,Iot Prototyping ,Graphic design, web support,logo,poster,banner" name="keywords">
-  <meta content="Communication is the key on which the lock of every organization turns, Our organization provides a digital support to upscale your growing business. We Develop Websites | Mobile Apps | Iot Prototypes | Graphic Design" name="description">
+  <meta content="Communication is the key on which the lock of every organization turns, Our organization provides a digital support to upscale your growing business. We Develop Websites | Mobile Apps | Iot Prototypes | Graphic Design. Our association is specialize
+            in various services like Website
+            Designing, Web Development, Android Development,
+            Software
+            Development,
+            and Graphics Designing.Get in
+            touch with our team today to
+            experience what makes TekhWare
+            stand apart
+            from other agencies.5" name="description">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <!-- Favicons -->
   <link href="img/logo 2.jpg" rel="icon">
@@ -243,7 +253,7 @@ if (isset($_POST['submitmssg'])) {
 
         <header class="section-header">
           <h3>Services</h3>
-          <p>Our association who specialize
+          <p>Our association is specialize
             in various services like Website
             Designing, Web Development, Android Development,
             Software
